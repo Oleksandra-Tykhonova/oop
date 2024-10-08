@@ -20,7 +20,6 @@ public class NumberOperations {
             System.out.print(element + " ");
         }
 
-
         int num1 = 3;
         float num2 = 4.5f;
         double num3 = 1000;
@@ -29,7 +28,6 @@ public class NumberOperations {
         BigInteger num4 = new BigInteger("7");
         BigDecimal num5 = new BigDecimal("5.6666666666");
 
-
         lst.add(num1);
         lst.add(num2);
         lst.add(num3);
@@ -37,7 +35,6 @@ public class NumberOperations {
         lst.add(num5);
         lst.add(num6);
         lst.add(num7);
-
 
         System.out.print("\nДодані елементи: ");
         ArrayList<Object> lst_add = new ArrayList<>();
@@ -52,7 +49,6 @@ public class NumberOperations {
         for (Object el : lst_add) {
             System.out.print(el + " ");
         }
-
 
         BigDecimal sum1 = new BigDecimal("0");
         BigDecimal num_bd = new BigDecimal("0");
@@ -78,13 +74,10 @@ public class NumberOperations {
         }
         System.out.println("Сума: " + sum1);
 
-
-
         System.out.print("\nСписок після додавання елементів: ");
         for (Object element : lst) {
             System.out.print(element + " ");
         }
-
 
         //Форматування і виведення списку у формат цілих чисел
         System.out.print("\nСписок у форматі цілих чисел: ");
@@ -101,8 +94,6 @@ public class NumberOperations {
                 System.out.print(((BigInteger) element).intValue() + " ");
             }
         }
-
-
 
         //Форматування і виведення списку у формат дробових чисел
         DecimalFormat df = new DecimalFormat("#.00");
@@ -122,7 +113,6 @@ public class NumberOperations {
                 System.out.print(df.format((Byte) i) + "  ");
             }
         }
-
 
         //Зберігаємо різні числа в залежності від їх типу
 
@@ -175,15 +165,11 @@ public class NumberOperations {
             System.out.print(i + " ");
         }
 
-
         BigDecimal int1 = new BigDecimal((Integer) lst_int.get(0));
         BigDecimal bd1 = (BigDecimal) lst_bd.get(0);
         BigDecimal res1 = bd1.add(int1);
         res1 = res1.setScale(0, RoundingMode.HALF_UP);
         System.out.println("\nint1 + bd1: " + res1);
-
-
-
 
         //цілі числа bi
         ArrayList<Object> lst_bi = new ArrayList<>();
@@ -196,9 +182,6 @@ public class NumberOperations {
         for (Object i : lst_bi) {
             System.out.print(i + " ");
         }
-
-
-
         task_V10(lst);
     }
 
@@ -234,31 +217,5 @@ public class NumberOperations {
             res = res.setScale(2, RoundingMode.HALF_UP);
             System.out.print(res + " ");
         }
-
-
-
-
-
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
