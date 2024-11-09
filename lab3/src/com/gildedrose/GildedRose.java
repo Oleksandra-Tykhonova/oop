@@ -32,15 +32,27 @@ class GildedRose {
     }
 
     private void update_BackstagePasses(Item item) {
-
+        if (item.quality < 50) {
+            item.quality++;
+            if (item.sellIn < 11 && item.quality < 50) {
+                item.quality++;
+            }
+            if (item.sellIn < 6 && item.quality < 50) {
+                item.quality++;
+            }
+        }
     }
 
     private void update_RegularItem(Item item) {
-
+        if (item.quality > 0) {
+            item.quality--;
+        }
     }
 
     private void update_SellIn(Item item) {
-
+        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            item.sellIn--;
+        }
     }
 
     private void handle_ExpiredItem(Item item) {
