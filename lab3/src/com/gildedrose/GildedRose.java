@@ -18,7 +18,6 @@ class GildedRose {
                     update_BackstagePasses(item);
                     break;
                 case SULFURAS:
-                    item.quality = item.quality - 1;
                     break;
                 case REGULAR:
                     update_RegularItem(item);
