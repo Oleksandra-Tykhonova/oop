@@ -30,7 +30,6 @@ class GildedRose {
         }
     }
 
-
     private void handle_ExpiredItem(Item item, ItemCategory category) {
         if (item.sellIn > 0) {
             return;
@@ -51,7 +50,6 @@ class GildedRose {
                 break;
         }
     }
-
 
     private void update_AgedBrie(Item item) {
         if (item.quality < 50) {
