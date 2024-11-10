@@ -32,22 +32,23 @@ class GildedRose {
 
 
     private void handle_ExpiredItem(Item item, ItemCategory category) {
-        if (item.sellIn < 0) {
-            switch (category) {
-                case AGED_BRIE:
-                    if (item.quality < 50) {
-                        item.quality++;
-                    }
-                    break;
-                case BACKSTAGE_PASS:
-                    item.quality = 0;
-                    break;
-                case REGULAR:
-                    if (item.quality > 0) {
-                        item.quality--;
-                    }
-                    break;
-            }
+        if (item.sellIn > 0) {
+            return;
+        }
+        switch (category) {
+            case AGED_BRIE:
+                if (item.quality < 50) {
+                    item.quality++;
+                }
+                break;
+            case BACKSTAGE_PASS:
+                item.quality = 0;
+                break;
+            case REGULAR:
+                if (item.quality > 0) {
+                    item.quality--;
+                }
+                break;
         }
     }
 
@@ -59,14 +60,15 @@ class GildedRose {
     }
 
     private void update_BackstagePasses(Item item) {
-        if (item.quality < 50) {
+        if (item.quality > 50) {
+            return;
+        }
+        item.quality++;
+        if (item.sellIn < 11 && item.quality < 50) {
             item.quality++;
-            if (item.sellIn < 11 && item.quality < 50) {
-                item.quality++;
-            }
-            if (item.sellIn < 6 && item.quality < 50) {
-                item.quality++;
-            }
+        }
+        if (item.sellIn < 6 && item.quality < 50) {
+            item.quality++;
         }
     }
 
