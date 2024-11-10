@@ -19,7 +19,7 @@ public class Main {
             System.out.println(item);
         }
 
-        app.updateQuality();
+        app.update_Quality();
 
         System.out.println("\nAfter inventorization:");
         for (Item item : items) {

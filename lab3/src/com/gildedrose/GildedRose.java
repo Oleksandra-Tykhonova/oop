@@ -7,7 +7,7 @@ class GildedRose {
         this.items = items;
     }
 
-    public void updateQuality() {
+    public void update_Quality() {
         for (Item item : items) {
             ItemCategory category = ItemCategory.categorize(item);
             switch (category) {
@@ -30,6 +30,7 @@ class GildedRose {
         }
     }
 
+
     private void handle_ExpiredItem(Item item, ItemCategory category) {
         if (item.sellIn < 0) {
             switch (category) {
@@ -46,30 +47,9 @@ class GildedRose {
                         item.quality--;
                     }
                     break;
-                case SULFURAS:
-                    if (item.quality > 0) {
-                        item.quality--;
-                    }
-                    break;
             }
         }
     }
-
-//    private void handle_ExpiredItem(Item item) {
-//        if (item.sellIn < 0) {
-//            if (item.name.equals("Aged Brie")) {
-//                if (item.quality < 50) {
-//                    item.quality++;
-//                }
-//            } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-//                item.quality = 0;
-//            } else {
-//                if (item.quality > 0 && !item.name.equals("Sulfuras, Hand of Ragnaros")) {
-//                    item.quality--;
-//                }
-//            }
-//        }
-//    }
 
 
     private void update_AgedBrie(Item item) {
